@@ -52,24 +52,17 @@ void aeh()
 int32_t main()
 {
 	aeh();
-	int x;cin>>x;
-	pair<int,int> ans2;
-	int ans=inf;
-	for(int i=1;i<=sqrt(x);i++)
+	int t;cin>>t;
+	while(t--)
 	{
-		if(x%i==0)
-		{
-			int d=x/i;
-			if(d*i/__gcd(d,i)==x)
-			{
-				if(max(d,i)<ans)
-				{
-					ans2={d,i};
-				}
-			}
-		}
+		int a,b,c,d,k;cin>>a>>b>>c>>d>>k;
+		int dist=abs(c-a)+abs(d-b);
+		dist--;
+		if((k-dist)%2!=0&&dist>=0)
+			cout<<"YES\n";
+		else
+			cout<<"NO\n";
 	}
-	cout<<ans2.f<<" "<<ans2.s<<endl;
 }
 
 int mpow(int base, int exp)
